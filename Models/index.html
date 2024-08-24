@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detecção de Tumores</title>
+  <link rel="shortcut icon" type="imagex/png" href="./Img/logo.png">
+</head>
+<script>
+  function showUploadButton() {
+    const fileInput = document.getElementById("file-input");
+    const uploadButton = document.getElementById("upload-button");
+
+    if (fileInput.files.length > 0) {
+      uploadButton.style.display = "block";
+    } else {
+      uploadButton.style.display = "none";
+    }
+  }
+</script>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Tummor Detection</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="guia.html">Guia</a></li>
+          <li><a href="sobre.html">Equipe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br><br><br><br><br>
+
+  <div class="container">
+    <h2>Detector de Tumor Cerebral</h2>
+    <br>
+    <div class="input">
+      <label for="file-input">Selecione a imagem de seu Exame</label>
+      <input type="file" id="file-input" accept=".jpg,.png,.jpeg" onchange="showUploadButton()" />
+    </div>
+    <button type="button" id="upload-button" onclick="uploadImage()" style="display: none;">Upload</button>
+
+    <div class="output" id="output">
+      <img id="selected-image" src="" alt="Selected Image" />
+      <div class="prediction" id="prediction"></div>
+    </div>
+  </div>
+  <br><br><br>
+
+
+
+  <style>
+    header {
+      background-color: #002C56;
+      padding: 10px 20px;
+      color: #FFFFFF;
+    }
+
+    /* Container do cabeçalho */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    /* Estilo para o logotipo/título */
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    /* Estilo para o menu de navegação */
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 35px;
+    }
+
+    /* Estilo para os itens do menu */
+    nav ul li {
+      display: inline;
+    }
+
+    /* Estilo para os links de navegação */
+    nav ul li a {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 5px 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Estilo de hover para os links */
+    nav ul li a:hover {
+      background-color: #8EC6E8;
+      border-radius: 4px;
+      color: #000000;
+    }
+
+    /* Estilo para a página */
+    body {
+      font-family: Arial, sans-serif;
+      height: 160vh;
+      color: #002C56;
+      background-color: #000000;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(1, 5, 44, 0.752), rgb(0, 0, 0)),
+        url('Img/tomografia.jpg');
+
+    }
+
+
+
+    /* Estilo para o container principal */
+    .container {
+
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 100px;
+
+    }
+
+    /* Estilo para o título */
+    h1 {
+      text-align: center;
+      color: #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4A4A4A;
+    }
+
+    /* Estilo para a área de input */
+    .input {
+      margin-bottom: 20px;
+      width: 97%;
+    }
+
+    /* Estilo para o rótulo de input */
+    .input label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #4A4A4A;
+    }
+
+    /* Estilo para o input de arquivo */
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #8EC6E8;
+      border-radius: 4px;
+      background-color: #FFFFFF;
+      color: #4A4A4A;
+    }
+
+    /* Estilo para o botão de upload */
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #002C56;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Estilo de hover para o botão */
+    button:hover {
+      background-color: #8EC6E8;
+      color: #000000;
+    }
+
+    /* Estilo para a área de output */
+    .output {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    /* Estilo para a imagem selecionada */
+    #selected-image {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #8EC6E8;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Estilo para a previsão */
+    .prediction {
+      font-size: 18px;
+      font-weight: bold;
+      color: #002C56;
+    }
+  </style>
+  <script>
+    function uploadImage() {
+      const fileInput = document.getElementById("file-input");
+      const imgElement = document.getElementById("selected-image");
+      const outputDiv = document.getElementById("output");
+      const predictionElement = document.getElementById("prediction");
+
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+          imgElement.src = event.target.result;
+          outputDiv.style.display = "block";
+
+          const base64String = reader.result
+            .replace("data:", "")
+            .replace(/^.+,/, "");
+          const data = { foto: base64String };
+
+          predictionElement.textContent = "";
+          fetch("/api/cnn", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.status === 200) {
+                predictionElement.textContent =
+                  "Prediction: " + data.prediction;
+              } else {
+                predictionElement.textContent = "Error: " + data.message;
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              predictionElement.textContent = "Error: " + error.message;
+            });
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        alert("Please select a file.");
+      }
+    }
+  </script>
+</body>
+
+</html>
