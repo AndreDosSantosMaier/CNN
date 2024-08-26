@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guia</title>
+    <title>Sobre</title>
     <link rel="shortcut icon" type="imagex/png" href="./Img/logo.png">
 </head>
 
 <body>
 
     <header>
+        
         <div class="header-container">
             <div class="logo">
-                <h1>Guia</h1>
+                <h1>Tummor Detection</h1>
             </div>
             <nav>
                 <ul>
@@ -27,61 +28,37 @@
     </header>
     <br><br><br><br>
     <div class="container">
-        <h1>Importância do projeto</h1>
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-            repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-            voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-            ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+
+        <h1>Oque é o projeto?</h1>
+        <div class="imagem">
+            <p>Desenvolvemos uma rede neural com 97% de precisão, capaz de detectar e classificar tumores cerebrais. Utilizando TensorFlow, Flask-API e Python, criamos um modelo robusto que facilita diagnósticos detalhados, essenciais para tratamentos específicos. Além disso por estar integrado ao Flask-API, nosso modelo está pronto para ser implementado em aplicações web, tornando-se uma ferramenta acessível e eficiente para profissionais de saúde. 
+            </p>
+            <img src="Img/cnnGraph.png"  >
+        </div>
     </div>
     <br><br><br>
     <div class="container">
-
         <h1>Importância do projeto</h1>
-        <div class="imagem">
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-                atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                similique
-                sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-                facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-                ut et
-                voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-                delectus,
-                ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-            </p>
-            <img src="Img/tomografia.jpg">
+        <div class="paragrafo">O uso de redes neurais na detecção de tumores cerebrais representa um avanço crucial na medicina, oferecendo diagnósticos mais rápidos e precisos para uma das formas mais agressivas de câncer. As técnicas tradicionais, como ressonâncias magnéticas, dependem da análise humana, o que pode levar a variações e erros. Redes neurais convolucionais, por outro lado, são altamente eficazes em identificar padrões sutis em imagens, permitindo diagnósticos mais precoces e precisos, aumentando as chances de tratamento bem-sucedido. Além disso, essa tecnologia pode democratizar o acesso a diagnósticos avançados, especialmente em áreas com recursos médicos limitados.
         </div>
     </div>
     <br><br><br>
     <div class="container">
 
-        <h1>Oque fizemos</h1>
+        <h1>Impacto no Brasil</h1>
         <div class="imagem">
-
-            <img src="Img/tomografia.jpg">
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-                atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                similique
-                sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-                facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-                ut et
-                voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-                delectus,
-                ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+            <p>A aplicação de redes neurais na detecção de tumores cerebrais é crucial para o SUS, melhorando o diagnóstico precoce e a eficiência do sistema. Com essa tecnologia, o SUS pode reduzir o tempo de espera e aumentar a precisão na identificação de tumores, especialmente em áreas com acesso limitado a especialistas. Isso não apenas alivia a sobrecarga dos profissionais de saúde, mas também otimiza o uso dos recursos, reduz custos e salva vidas ao assegurar que os pacientes recebam o tratamento adequado no momento certo.
             </p>
+            <img src="img/sus.jpg" alt="Girl in a jacket">
         </div>
     </div>
     <br><br><br>
+    
 
 
     <style>
+
+
         header {
             background-color: #002C56;
             padding: 10px 20px;
@@ -93,9 +70,16 @@
             font-weight: 500;
         }
 
-        p {
-            font-size: 1em;
+        .paragrafo{
+            font-size: 1.3em;
             font-weight: 500;
+            margin-right: 30px;
+ 
+        }
+        p{
+            font-size: 1.3em;
+            font-weight: 500;
+            
         }
 
         /* Container do cabeçalho */
@@ -161,7 +145,7 @@
         }
 
         .container {
-            max-width: 1800px;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: #FFFFFF;
             padding: 20px;
@@ -175,14 +159,28 @@
         .imagem {
             display: flex;
             gap: 30px;
+            
         }
 
         img {
-            height: 50%;
-            width: 50%;
+            height: 250px;
+            width: 500px;
             padding: 10px;
             background-color: #00182f;
             border-radius: 10px;
+        }
+        *::-webkit-scrollbar {
+        width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+        background: rgba(216, 216, 216, 0);
+        }
+
+        *::-webkit-scrollbar-thumb {
+        background-color: rgb(175, 175, 206);
+        border-radius: 20px;
+        border: 3px solid rgb(0, 0, 0);
         }
     </style>
 </body>
