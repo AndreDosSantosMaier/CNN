@@ -25,14 +25,14 @@
   <header>
     <div class="header-container">
       <div class="logo">
-        <h1>Tummor Detection</h1>
+        <h1>Detecção De Tumores</h1>
       </div>
       <nav>
         <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="/sobre">Sobre</a></li>
-          <li><a href="/guia">Guia</a></li>
-          <li><a href="/sobre">Equipe</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="guia.html">Guia</a></li>
+          <li><a href="sobre.html">Equipe</a></li>
         </ul>
       </nav>
     </div>
@@ -138,7 +138,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 100px;
-
     }
 
     /* Estilo para o título */
@@ -264,7 +263,7 @@
             .then((data) => {
               if (data.status === 200) {
                 predictionElement.textContent =
-                  "Prediction: " + data.prediction;
+                  "Previsão: " + data.prediction;
               } else {
                 predictionElement.textContent = "Error: " + data.message;
               }
