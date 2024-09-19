@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detecção de Tumores</title>
-  <link rel="shortcut icon" type="imagex/png" href="./Img/logo.png">
+  <link rel="shortcut icon" type="imagex/png" href="./static/Img/logo.png">
 </head>
 <script>
   function showUploadButton() {
@@ -29,10 +29,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="guia.html">Guia</a></li>
-          <li><a href="sobre.html">Equipe</a></li>
+          <li><a href="/">Início</a></li>
+          <li><a href="sobre">Sobre</a></li>
+          <li><a href="guia">Guia</a></li>
+
         </ul>
       </nav>
     </div>
@@ -122,7 +122,7 @@
       margin: 0;
       background-image:
         linear-gradient(to bottom, rgba(1, 5, 44, 0.752), rgb(0, 0, 0)),
-        url('./Img/foto1.jpg');
+        url('./static/Img/foto1.jpg');
 
     }
 
@@ -212,11 +212,33 @@
     }
 
     /* Estilo para a previsão */
-    .prediction {
-      font-size: 40px;
-      font-weight: bold;
-      color: #002C56;
+    /* Estilo para a previsão */
+.prediction {
+    font-size: 48px; /* Aumentar o tamanho */
+    font-weight: bold;
+    color: #FFFFFF; /* Texto branco para contraste */
+    background:#002C56;
+    padding: 20px; /* Espaço interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra intensa no texto */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra externa para destacar a caixa */
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards; /* Animação de fade-in */
+}
+
+/* Animação para a previsão aparecer suavemente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Leve efeito de zoom */
     }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
     *::-webkit-scrollbar {
         width: 12px;
         }

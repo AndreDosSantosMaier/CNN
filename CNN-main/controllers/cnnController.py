@@ -3,7 +3,6 @@ import pybase64
 import tensorflow as tf
 from keras import preprocessing
 from tensorflow import image
-
 import numpy as np
 import io
 from PIL import Image
@@ -44,7 +43,7 @@ def cnn():
 
             return {
                 'status': 200,
-                'message': "Funcionou",
+                'message': "Requisição funcionou",
                 'prediction': disease_name
             }
         except Exception as error:
