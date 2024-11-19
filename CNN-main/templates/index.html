@@ -54,6 +54,7 @@
       <img id="selected-image" src="" alt="Selected Image" />
       <div class="prediction" id="prediction"></div>
       <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      <div id="modadiv"></div>
     </div>
   </div>
   <br><br><br>
@@ -124,6 +125,12 @@
                 }]
               });
               chart.render();
+              try{
+              document.getElementById('modadiv').innerHTML = "<h2> <a href="+ data.moda +">"+ data.moda +"</a> </h2>"
+              }
+              catch (error) {
+                document.getElementById('modadiv').innerHTML = error
+              } 
               // caso não receba mostra a mensagem de erro
               } else {
                 predictionElement.textContent = "Error: " + data.message;
@@ -134,6 +141,7 @@
               predictionElement.textContent = "Error: " + error.message;
             });
         };
+        
 
         reader.readAsDataURL(file);
       } else {
@@ -216,7 +224,7 @@
   /* Estilo para o container principal */
   .container {
 
-    max-width: 600px;
+    max-width:900px;
     margin: 0 auto;
     background-color: #FFFFFF;
     padding: 20px;
@@ -234,6 +242,7 @@
   h2 {
     text-align: center;
     color: #4A4A4A;
+    font-size: xx-large;
   }
 
   /* Estilo para a área de input */
@@ -320,6 +329,21 @@
       background-color: rgb(175, 175, 206);
       border-radius: 20px;
       border: 3px solid rgb(0, 0, 0);
+      }
+      
+      a:hover{
+        flex: 1;
+        text-decoration: none;
+        outline-color: transparent;
+        text-align: center;
+        color:  #002C56;
+      }
+      a{
+        flex: 1;
+        text-decoration: none;
+        outline-color: transparent;
+        text-align: center;
+        color:  #002C56;
       }
 </style>
 

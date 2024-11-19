@@ -10,6 +10,8 @@ import os
 import matplotlib.pyplot as plt
 from base64 import b64encode
 from json import dumps
+import statistics
+
 
 
 classes = [
@@ -19,7 +21,7 @@ classes = [
     "pituitary"
 ]
 #lista de paths de modelos de CNN
-models = ["./model/d.keras","./model/e.keras","./model/b.keras","./model/normalizado.keras","./model/3.keras","./model/32batches.keras","./model/ruim.keras"]
+models = ["./model/d.keras","./model/e.keras","./model/b.keras","./model/normalizado.keras","./model/3.keras","./model/32batches.keras"]
 
 #função para fazer a previsão do tipo de tumor
 def predict(path):
@@ -59,7 +61,7 @@ def cnn():
             percentp = round((len(list(filter(lambda ele: ele == "pituitary", results))) / len(results)) * 100)
             percentm = round((len(list(filter(lambda ele: ele == "meningioma", results))) / len(results)) * 100)
             percentn = round((len(list(filter(lambda ele: ele == "notumor", results))) / len(results)) * 100)
-
+            moda = statistics.mode(results)
             #retorna a data pro index 
             return {
                 'status': 200,
@@ -69,6 +71,7 @@ def cnn():
                 'pituitary': percentp,
                 'meningioma': percentm,
                 'notumor': percentn,
+                'moda': moda
             
             
             }
