@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guia</title>
+    <title>Pituitary</title>
     <link rel="shortcut icon" type="imagex/png" href="./static/Img/logo.png">
-    <link rel="stylesheet" type="text/css" href="/static\Style\style.css" media="screen" /> 
 </head>
 
 <body>
@@ -14,12 +13,13 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <h1>Guia</h1>
+                <a href="/"><h1>Neuroscope</h1></a>
+                <img src="./static/Img/logo.png" alt="Logo Neuroscope" class="logo-img">
             </div>
             <nav>
                 <ul>
-                    <li><a href="/">Início</a></li>
-                    <li><a href="sobre">Sobre</a></li>
+                    <li><a href="inicio">Início</a></li>
+                    <li></li>
                     <li><a href="guia">Guia</a></li>                  
                 </ul>
             </nav>
@@ -29,17 +29,37 @@
     
     <div class="container">
 
-        <h1>Pituitary</h1>
+        <h2>Pituitary</h2>
         <div class="imagem">
             <p class="texto">Um tumor na hipófise, também conhecido como tumor pituitário ou adenoma hipofisário, é um crescimento anormal na glândula pituitária, localizada na base do cérebro. A hipófise é uma glândula endócrina que produz hormônios e controla outras glândulas do corpo. 
                 Os tumores na hipófise são raros e de difícil diagnóstico, mas na maioria dos casos são benignos. Apenas 0,1% dos casos são malignos.
             </p>
-            <img class="imagem" src="/static/Img/pituitary.jpg"  >
+            <img class="img-tu" src="/static/Img/pituitary.jpg"  >
         </div>
     </div>
     <br><br><br>
 
     <style>
+        a{
+            flex: 1;
+            text-decoration: none;
+            outline-color: transparent;
+            text-align: center;
+            color:  #002C56;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center; /* Alinha a imagem e o texto no centro vertical */
+            gap: 10px; /* Espaço entre a logo e o texto */
+        }
+
+        .logo-img {
+            width: 40px; /* Ajuste o tamanho da logo */
+            height: 40px; /* Ajuste o tamanho da logo */
+            object-fit: contain; /* Garante que a imagem não distorça */
+        }
+
         header {
             background-color: #002C56;
             padding: 10px 20px;
@@ -47,18 +67,24 @@
         }
 
         h1 {
-            font-size: 3em;
-            font-weight: 500;
+            text-align: center;
+            color: #ffffff;
         }
 
         .paragrafo{
-            font-size: 1.3em;
+            font-size: 1.7em;
             font-weight: 500;
             margin-right: 30px;
  
         }
+        h2{
+            font-size: 2.4em;
+            font-weight: 600;
+            margin-right: 30px;
+ 
+        }
         p{
-            font-size: 1.3em;
+            font-size: 1.7em;
             font-weight: 600;
             
         }
@@ -76,7 +102,7 @@
         /* Estilo para o logotipo/título */
         .logo h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 30px;
             font-weight: normal;
         }
 
@@ -98,7 +124,8 @@
         nav ul li a {
             text-decoration: none;
             color: #FFFFFF;
-            font-weight: bold;
+            font-weight: lighter;
+            font-size: 30px;
             padding: 5px 10px;
             transition: background-color 0.3s ease;
         }
@@ -143,7 +170,7 @@
             
         }
 
-        img {
+        .img-tu {
             height: 400px;
             width: 600px;
             padding: 10px;

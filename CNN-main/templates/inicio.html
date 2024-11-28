@@ -9,44 +9,31 @@
 </head>
 
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script> <!-- Biblioteca para gerar graficos em js-->
-<script>
-  //função pra só mostrar o botão de upload quando o usuario selecionar uma imagem
-  function showUploadButton() {
-    const fileInput = document.getElementById("file-input");
-    const uploadButton = document.getElementById("upload-button");
-
-    if (fileInput.files.length > 0) {
-      uploadButton.style.display = "block";
-    } else {
-      uploadButton.style.display = "none";
-    }
-  }
-</script>
 
 <body>
   <header>
     <div class="header-container">
-      <div class="logo">
-        <h1>Detecção De Tumores</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="sobre">Sobre</a></li>
-          <li><a href="guia">Guia</a></li>
-
-        </ul>
-      </nav>
+        <div class="logo">
+            <a href="/"><h1>Neuroscope</h1></a>
+            <img src="./static/Img/logo.png" alt="Logo Neuroscope" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio">Início</a></li>
+                <li></li>
+                <li><a href="guia">Guia</a></li>                  
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
   <br><br><br><br><br>
 
   <div class="container">
-    <h2>Detecção de Tumores</h2>
+    <h2>Ferramenta de diagnóstico</h2>
     <br>
     <div class="input">
       <label for="file-input">Selecione a imagem de seu Exame</label>
-      <input type="file" id="file-input" accept=".jpg,.png,.jpeg" onchange="showUploadButton()" />
+      <input  type="file" id="file-input" accept=".jpg,.png,.jpeg" onchange="showUploadButton()"> </input>
     </div>
     <button type="button" id="upload-button" onclick="uploadImage()" style="display: none;">Upload</button>
 
@@ -54,7 +41,9 @@
       <img id="selected-image" src="" alt="Selected Image" />
       <div class="prediction" id="prediction"></div>
       <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      <br><br><br><br>
       <div id="modadiv"></div>
+      
     </div>
   </div>
   <br><br><br>
@@ -63,6 +52,17 @@
 
   
   <script>
+     //função pra só mostrar o botão de upload quando o usuario selecionar uma imagem
+      function showUploadButton() {
+        const fileInput = document.getElementById("file-input");
+        const uploadButton = document.getElementById("upload-button");
+
+        if (fileInput.files.length > 0) {
+          uploadButton.style.display = "block";
+        } else {
+          uploadButton.style.display = "none";
+        }
+      }
     //função para converter a imagem em base64 e enviar para a CNN em formato json
     function uploadImage() {
       const fileInput = document.getElementById("file-input");
@@ -126,7 +126,7 @@
               });
               chart.render();
               try{
-              document.getElementById('modadiv').innerHTML = "<h2> <a href="+ data.moda +">"+ data.moda +"</a> </h2>"
+              document.getElementById('modadiv').innerHTML = " <a href="+ data.moda +"><h2>"+ data.moda +"</h2></a> "
               }
               catch (error) {
                 document.getElementById('modadiv').innerHTML = error
@@ -151,6 +151,23 @@
   </script>
 </body>
 <style>
+   #modadiv a {
+    margin-top: 0px;
+    text-decoration: underline;
+    outline-color: #002C56;
+  }
+  .logo {
+            display: flex;
+            align-items: center; /* Alinha a imagem e o texto no centro vertical */
+            gap: 10px; /* Espaço entre a logo e o texto */
+        }
+
+    .logo-img {
+        width: 40px; /* Ajuste o tamanho da logo */
+        height: 40px; /* Ajuste o tamanho da logo */
+        object-fit: contain; /* Garante que a imagem não distorça */
+    }
+
   header {
     background-color: #002C56;
     padding: 10px 20px;
@@ -170,7 +187,7 @@
   /* Estilo para o logotipo/título */
   .logo h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: normal;
   }
 
@@ -192,10 +209,11 @@
   nav ul li a {
     text-decoration: none;
     color: #FFFFFF;
-    font-weight: bold;
+    font-weight: lighter;
+    font-size: 30px;
     padding: 5px 10px;
     transition: background-color 0.3s ease;
-  }
+        }
 
   /* Estilo de hover para os links */
   nav ul li a:hover {
@@ -241,8 +259,8 @@
 
   h2 {
     text-align: center;
-    color: #4A4A4A;
-    font-size: xx-large;
+    color: #002C56;
+    font-size: 3rem;
   }
 
   /* Estilo para a área de input */
@@ -256,7 +274,7 @@
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #4A4A4A;
+    color: #002C56;
   }
 
   /* Estilo para o input de arquivo */
@@ -298,7 +316,7 @@
 
   /* Estilo para a imagem selecionada */
   #selected-image {
-    max-width: 100%;
+    max-width: 400px;
     height: auto;
     border: 2px solid #8EC6E8;
     border-radius: 4px;

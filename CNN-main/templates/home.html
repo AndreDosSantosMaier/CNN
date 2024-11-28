@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guia</title>
+    <title>Neuroscope</title>
     <link rel="shortcut icon" type="imagex/png" href="./static/Img/logo.png">
-    <link rel="stylesheet" type="text/css" href="/static\Style\style.css" media="screen" /> 
+    
 </head>
 
 <body>
@@ -20,45 +20,28 @@
             <nav>
                 <ul>
                     <li><a href="inicio">Início</a></li>
-                    <li></li>
+
                     <li><a href="guia">Guia</a></li>                  
                 </ul>
             </nav>
         </div>
     </header>
-    <div class="container">
+    
         <div class="carousel">
-            
             <div class="carousel-track">
                 <div class="slide">
-                    <img src="/static/Img/tut1.jpg" alt="Slide 1">
-                    <div class="slide-text">Vá para a pagina de inicio onde se encontra a ferramenta</div>
+                    <img src="/static/Img/tomografia.jpg" alt="Slide 1">
                 </div>
                 <div class="slide">
-                    <img src="/static/Img/tut2.jpg" alt="Slide 2">
-                    <div class="slide-text">Clique em escolher arquivo </div>
+                    <img src="/static/Img/exames.jpg" alt="Slide 2">
                 </div>
                 <div class="slide">
-                    <img src="/static/Img/tut3.jpg" alt="Slide 3">
-                    <div class="slide-text">Selecione a imagem do exame desejado</div>
+                    <img src="/static/Img/medica.jpg" alt="Slide 3">
                 </div>
                 <div class="slide">
-                    <img src="/static/Img/tut4.jpg" alt="Slide 4">
-                    <div class="slide-text">Envie a imagem usando o botão de upload</div>
-                </div>
-                <div class="slide">
-                    <img src="/static/Img/tut6.png" alt="Slide 4">
-                    <div class="slide-text">Os resultados aparecerão em forma de grafico logo abaixo do botão de upload</div>
-                </div>
-                <div class="slide">
-                    <img src="/static/Img/tut5.jpg" alt="Slide 4">
-                    <div class="slide-text">Clique no nome do tumor para receber mais detalhes</div>
+                    <img src="/static/Img/exames2.jpg" alt="Slide 4">
                 </div>
             </div>
-            </div>
-        </div>
-    </div>
-        </div>
             <div class="carousel-buttons">
                 <button class="carousel-button prev">&lt;</button>
                 <button class="carousel-button next">&gt;</button>
@@ -68,11 +51,26 @@
                 <div class="indicator"></div>
                 <div class="indicator"></div>
                 <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
             </div>
         </div>
-    
+        <div class="btn-container">
+        <button class="botao" ><a href="/inicio"><p class="btn-txt">Fazer Diagnóstico</p></a></button>
+        </div>
+        <div class="container">
+            
+            <h1>Sobre</h1>
+            <p> projeto é um site voltado para a área de oncologia, desenvolvido com o objetivo de utilizar inteligência artificial para detectar e classificar tumores cerebrais. Ele foi criado para servir como uma ferramenta de apoio ao diagnóstico, especialmente para médicos que analisam exames de ressonância magnética.
+
+                A proposta principal é auxiliar profissionais da saúde no reconhecimento e classificação de três tipos específicos de tumores:
+            </p>
+            <ul>
+                <li><p><a href="pituitary">Pituitário</p></a></li>
+                <li><p><a href="meningioma">Meningioma </a></p></li>
+                <li><p><a href="glioma">Glioma</p></a></li>
+            </ul>   
+                <p>Além disso, o projeto se apresenta como uma forma de lutar contra uma das formas mais agressivas de câncer, auxiliando os radiologistas a identificar e classificar tumores de forma mais rápida e eficiente. Em um cenário onde cada segundo pode fazer a diferença entre a vida e a morte, essa ferramenta tem o potencial de acelerar diagnósticos críticos e salvar vidas.</p>
+            </p>
+            </div>
         <script>
             const track = document.querySelector('.carousel-track');
             const slides = Array.from(track.children);
@@ -107,12 +105,20 @@
                     updateSlidePosition();
                 });
             });
-
+    
+            // Navegação automática
+            setInterval(moveToNextSlide, 5000); // Troca a cada 5 segundos
         </script>
     
     </body>
     
     <style>
+        li a {
+            color: #FFFFFF;
+            outline-color: #FFFFFF ;
+            text-decoration: underline  ;
+        }
+
         .logo {
             display: flex;
             align-items: center; /* Alinha a imagem e o texto no centro vertical */
@@ -124,21 +130,64 @@
             height: 40px; /* Ajuste o tamanho da logo */
             object-fit: contain; /* Garante que a imagem não distorça */
         }
-
+       
+        .btn-container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-txt {
+            font-size: 3rem;
+            color: #002C56;
+            
+        }
+        .botao {
+            font-family: "Italiana";
+            font-weight: lighter; 
+            display: block;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: #FFFFFF;
+            color: #002C56;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .container ul {
+            text-align: left;
+            color: #FFFFFF;
+        }
+        .container p {
+        color: #FFFFFF;
+        font-size: x-large;
+        }
+         .container {
+            text-align: justify;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+        }
         header {
             background-color: #002C56;
             padding: 10px 20px;
             color: #FFFFFF;
         }
-
         h1 {
-            font-size: 3em;
-            font-weight: 500;
             text-align: center;
-        color: #ffffff;
+            color: #ffffff;
+  }
+        .container h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: #FFFFFF;
         }
-
-
 
         /* Container do cabeçalho */
         .header-container {
@@ -156,7 +205,6 @@
             font-size: 30px;
             font-weight: normal;
         }
-
         a{
         flex: 1;
         text-decoration: none;
@@ -199,14 +247,16 @@
         /* Estilo para a página */
         body {
             font-family: "Italiana";
-            height: 100vh;
+            height: 200vh;
             color: #002C56;
-            background-color: #ffffff;
+            background-color: #000000;
             background-repeat: no-repeat;
             background-size: cover;
             margin: 0;
             font-size: 100%;
-            
+            background-image:
+                linear-gradient(to bottom, rgba(1, 5, 44, 0.700), rgb(0, 0, 0)),
+                url('/static/Img/foto2.jpg');
         }
 
         *::-webkit-scrollbar {
@@ -223,17 +273,18 @@
         border: 3px solid rgb(0, 0, 0);
         }
         .carousel {
-            width: 80%;
-            max-width: 1500px;
+            width: 60%; /* Reduzido de 80% */
+            max-width: 1000px; /* Reduzido de 1500px */
             overflow: hidden;
-            margin: 0 auto; /* Centraliza horizontalmente */
-            margin-top: 30px; /* Adiciona um espaço abaixo da header */
+            margin: 0 auto;
+            margin-top: 30px;
             position: relative;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 400px; /* Adicionada altura fixa */
 }
         .carousel-track {
             display: flex;
@@ -246,8 +297,9 @@
         }
         .slide img {
             width: 100%;
-            display: block;
-        }
+            height: 100%; /* Mantém a imagem proporcional ao container */
+            object-fit: cover; /* Garante que a imagem seja cortada de maneira elegante */
+}
         .slide-text {
             position: absolute;
             bottom: 20px;

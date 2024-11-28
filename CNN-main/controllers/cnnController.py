@@ -21,7 +21,7 @@ classes = [
     "pituitary"
 ]
 #lista de paths de modelos de CNN
-models = ["./model/d.keras","./model/e.keras","./model/b.keras","./model/normalizado.keras","./model/3.keras","./model/32batches.keras"]
+models = ["./model/d.keras","./model/e.keras","./model/b.keras","./model/normalizado.keras","./model/3.keras","./model/32batches.keras","./model/yuri.keras"]
 
 #função para fazer a previsão do tipo de tumor
 def predict(path):
@@ -84,7 +84,7 @@ def cnn():
         
 
     elif request.method == 'GET':
-        return render_template('index.html')
+        return render_template('inicio.html')
     else:
         return {
             'status': 405,
